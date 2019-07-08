@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iperf3
+spec:
+  nodeName: 
+  containers:
+  - name: iperf3
+    image: centos:7
+    command: ["/bin/bash","-c","while true; do sleep 1000; done"]
+    imagePullPolicy: IfNotPresent
