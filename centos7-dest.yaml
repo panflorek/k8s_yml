@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: centos7-dest
+  labels:
+    app: centos7-dest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: centos7-dest
+  template:
+    metadata:
+      labels:
+        app: centos7-dest
+    spec:
+      containers:
+      - name: centos7-dest
+        image: centos:7
+        command: ["/bin/bash","-c","while true; do sleep 1000; done"]
+        imagePullPolicy: IfNotPresent
