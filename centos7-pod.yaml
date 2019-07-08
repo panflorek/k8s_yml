@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: centos7-pod
 spec:
+  nodeName: 
   containers:
   - name: centos7
     image: centos:7
